@@ -1,10 +1,8 @@
-# Predicting Electric Vehicle Purchases 🚗⚡
-
-A collaborative machine learning project to analyze, explore, and predict electric vehicle purchase behavior.
+# Predicting Electric Vehicle Purchases 
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 ├── .github/workflows/     # CI/CD: Automated linting & notebook check
@@ -22,9 +20,7 @@ A collaborative machine learning project to analyze, explore, and predict electr
 
 ---
 
-## 🛠️ Getting Started (Team Setup Guide)
-
-To avoid formatting conflicts, notebook merge collisions, and "works on my machine" issues across operating systems (Windows, Mac, Linux), every team member should follow these steps:
+## Team Set-Up
 
 ### 1. Clone the repository
 ```bash
@@ -53,21 +49,15 @@ pip install -r requirements-dev.txt
 ```bash
 pre-commit install
 ```
-> **What this does:** Every time you run `git commit`, `pre-commit` will automatically:
+> **What this does:** Whenever `git commit` executed, `pre-commit` will automatically:
 > 1. Strip all execution outputs and cell execution counts from `.ipynb` files (`nbstripout`).
 > 2. Format your Python scripts and notebook cells using **Ruff**.
 > 3. Fix trailing whitespaces and normalize line endings.
 
 ---
 
-## 🤝 Collaboration Best Practices
-
-### Why Did Merge Conflicts Happen Before?
-1. **Jupyter Notebook JSON bloat**: When you run a notebook, Jupyter saves your local execution count (`[1]`, `[2]`), execution timestamps, and output cells (including huge base64 images and logs). Even if two people edit different parts or just re-run the notebook, git sees conflict markers in the raw JSON and corrupts the file.
-2. **Formatting differences**: Different editors format quotes, spaces, and line breaks differently. Modifying 1 line could trigger a 100-line reformatting diff.
-3. **No line-ending normalization**: Windows uses `CRLF` while macOS/Linux uses `LF`.
-
-### The Solution in This Repo
+## File info
+### Responsibility
 - **`nbstripout`**: Automatically strips cell outputs before committing, so only your actual code and markdown are tracked in Git.
 - **`ruff`**: An ultra-fast Python linter and formatter that unifies style across `.py` and `.ipynb` files.
 - **`src/` vs `notebook/` pattern**:
